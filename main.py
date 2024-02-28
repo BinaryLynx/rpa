@@ -6,6 +6,11 @@ from sel import SeleniumController
 app = FastAPI()
 
 
+@app.get("/")
+def redir():
+    return "Перейдите на страницу /docs и выберете маршрут upload, чтобы протестировать загрузку файла"
+
+
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
     # загрузить файл
